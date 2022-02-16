@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>ui-vmm JSON:API vHEAD-1e577ae</title>
+    <title>ui-vmm JSON:API vHEAD-d49af90</title>
 
     <style media="screen">
       .highlight table td { padding: 5px; }
@@ -304,7 +304,7 @@
         </div>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#ui-vmm-json-api" class="toc-h1 toc-link" data-title="ui-vmm JSON:API vHEAD-1e577ae">ui-vmm JSON:API vHEAD-1e577ae</a>
+            <a href="#ui-vmm-json-api" class="toc-h1 toc-link" data-title="ui-vmm JSON:API vHEAD-d49af90">ui-vmm JSON:API vHEAD-d49af90</a>
           </li>
           <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
@@ -313,7 +313,7 @@
             <a href="#ui-vmm-json-api-certificate" class="toc-h1 toc-link" data-title="Certificate">Certificate</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#certificate-get" class="toc-h2 toc-link" data-title="certificate get">certificate get</a>
+                    <a href="#certificate-list" class="toc-h2 toc-link" data-title="certificate list">certificate list</a>
                   </li>
                   <li>
                     <a href="#certificate-revoke" class="toc-h2 toc-link" data-title="certificate revoke">certificate revoke</a>
@@ -346,7 +346,10 @@
                     <a href="#image-delete" class="toc-h2 toc-link" data-title="image delete">image delete</a>
                   </li>
                   <li>
-                    <a href="#image-get" class="toc-h2 toc-link" data-title="image get">image get</a>
+                    <a href="#image-list" class="toc-h2 toc-link" data-title="image list">image list</a>
+                  </li>
+                  <li>
+                    <a href="#image-serverlist" class="toc-h2 toc-link" data-title="image serverlist">image serverlist</a>
                   </li>
               </ul>
           </li>
@@ -357,7 +360,13 @@
                     <a href="#instance-action" class="toc-h2 toc-link" data-title="instance action">instance action</a>
                   </li>
                   <li>
+                    <a href="#instance-add" class="toc-h2 toc-link" data-title="instance add">instance add</a>
+                  </li>
+                  <li>
                     <a href="#instance-get" class="toc-h2 toc-link" data-title="instance get">instance get</a>
+                  </li>
+                  <li>
+                    <a href="#instance-list" class="toc-h2 toc-link" data-title="instance list">instance list</a>
                   </li>
               </ul>
           </li>
@@ -365,7 +374,7 @@
             <a href="#ui-vmm-json-api-pool" class="toc-h1 toc-link" data-title="Pool">Pool</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#pool-get" class="toc-h2 toc-link" data-title="pool get">pool get</a>
+                    <a href="#pool-list" class="toc-h2 toc-link" data-title="pool list">pool list</a>
                   </li>
               </ul>
           </li>
@@ -376,7 +385,7 @@
                     <a href="#profile-delete" class="toc-h2 toc-link" data-title="profile delete">profile delete</a>
                   </li>
                   <li>
-                    <a href="#profile-get" class="toc-h2 toc-link" data-title="profile get">profile get</a>
+                    <a href="#profile-list" class="toc-h2 toc-link" data-title="profile list">profile list</a>
                   </li>
                   <li>
                     <a href="#profile-update" class="toc-h2 toc-link" data-title="profile update">profile update</a>
@@ -391,6 +400,9 @@
                   </li>
                   <li>
                     <a href="#server-get" class="toc-h2 toc-link" data-title="server get">server get</a>
+                  </li>
+                  <li>
+                    <a href="#server-list" class="toc-h2 toc-link" data-title="server list">server list</a>
                   </li>
                   <li>
                     <a href="#server-verify" class="toc-h2 toc-link" data-title="server verify">server verify</a>
@@ -487,7 +499,7 @@
             <a href="#ui-vmm-json-api-volume" class="toc-h1 toc-link" data-title="Volume">Volume</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#volume-get" class="toc-h2 toc-link" data-title="volume get">volume get</a>
+                    <a href="#volume-list" class="toc-h2 toc-link" data-title="volume list">volume list</a>
                   </li>
               </ul>
           </li>
@@ -495,7 +507,7 @@
             <a href="#schemas" class="toc-h1 toc-link" data-title="Schemas">Schemas</a>
               <ul class="toc-list-h2">
                   <li>
-                    <a href="#tocS_certificate.get" class="toc-h2 toc-link" data-title="certificate.get">certificate.get</a>
+                    <a href="#tocS_certificate.list" class="toc-h2 toc-link" data-title="certificate.list">certificate.list</a>
                   </li>
                   <li>
                     <a href="#tocS_certificate.revoke" class="toc-h2 toc-link" data-title="certificate.revoke">certificate.revoke</a>
@@ -510,22 +522,31 @@
                     <a href="#tocS_image.delete" class="toc-h2 toc-link" data-title="image.delete">image.delete</a>
                   </li>
                   <li>
-                    <a href="#tocS_image.get" class="toc-h2 toc-link" data-title="image.get">image.get</a>
+                    <a href="#tocS_image.list" class="toc-h2 toc-link" data-title="image.list">image.list</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_image.serverList" class="toc-h2 toc-link" data-title="image.serverList">image.serverList</a>
                   </li>
                   <li>
                     <a href="#tocS_instance.action" class="toc-h2 toc-link" data-title="instance.action">instance.action</a>
                   </li>
                   <li>
+                    <a href="#tocS_instance.add" class="toc-h2 toc-link" data-title="instance.add">instance.add</a>
+                  </li>
+                  <li>
                     <a href="#tocS_instance.get" class="toc-h2 toc-link" data-title="instance.get">instance.get</a>
                   </li>
                   <li>
-                    <a href="#tocS_pool.get" class="toc-h2 toc-link" data-title="pool.get">pool.get</a>
+                    <a href="#tocS_instance.list" class="toc-h2 toc-link" data-title="instance.list">instance.list</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_pool.list" class="toc-h2 toc-link" data-title="pool.list">pool.list</a>
                   </li>
                   <li>
                     <a href="#tocS_profile.delete" class="toc-h2 toc-link" data-title="profile.delete">profile.delete</a>
                   </li>
                   <li>
-                    <a href="#tocS_profile.get" class="toc-h2 toc-link" data-title="profile.get">profile.get</a>
+                    <a href="#tocS_profile.list" class="toc-h2 toc-link" data-title="profile.list">profile.list</a>
                   </li>
                   <li>
                     <a href="#tocS_profile.update" class="toc-h2 toc-link" data-title="profile.update">profile.update</a>
@@ -535,6 +556,9 @@
                   </li>
                   <li>
                     <a href="#tocS_server.get" class="toc-h2 toc-link" data-title="server.get">server.get</a>
+                  </li>
+                  <li>
+                    <a href="#tocS_server.list" class="toc-h2 toc-link" data-title="server.list">server.list</a>
                   </li>
                   <li>
                     <a href="#tocS_server.verify" class="toc-h2 toc-link" data-title="server.verify">server.verify</a>
@@ -582,7 +606,7 @@
                     <a href="#tocS_user.register" class="toc-h2 toc-link" data-title="user.register">user.register</a>
                   </li>
                   <li>
-                    <a href="#tocS_volume.get" class="toc-h2 toc-link" data-title="volume.get">volume.get</a>
+                    <a href="#tocS_volume.list" class="toc-h2 toc-link" data-title="volume.list">volume.list</a>
                   </li>
               </ul>
           </li>
@@ -595,7 +619,7 @@
       <div class="content">
         <!-- Generator: Widdershins v3.6.6 -->
 
-<h1 id="ui-vmm-json-api">ui-vmm JSON:API vHEAD-1e577ae</h1>
+<h1 id="ui-vmm-json-api">ui-vmm JSON:API vHEAD-d49af90</h1>
 
 <blockquote>
 <p>Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.</p>
@@ -614,8 +638,8 @@
 </ul>
 
 <h1 id="ui-vmm-json-api-certificate">Certificate</h1>
-<h2 id='certificate-get'>certificate get</h2>
-<p><a id="opIdcertificate get"></a></p>
+<h2 id='certificate-list'>certificate list</h2>
+<p><a id="opIdcertificate list"></a></p>
 
 <blockquote>
 <p>Code samples</p>
@@ -628,7 +652,7 @@
   <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Bearer {access-token}'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://example.com/api/v1/certificate.get'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://example.com/api/v1/certificate.list'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -640,17 +664,17 @@
   <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Bearer {access-token}'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://example.com/api/v1/certificate.get'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://example.com/api/v1/certificate.list'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> POST https://example.com/api/v1/certificate.get <span class="se">\</span>
+curl <span class="nt">-X</span> POST https://example.com/api/v1/certificate.list <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/vnd.api+json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Authorization: Bearer {access-token}'</span>
 
 </code></pre></div>
-<p><code>POST /v1/certificate.get</code></p>
+<p><code>POST /v1/certificate.list</code></p>
 
 <p>Displays a list of certificates on the server</p>
 
@@ -662,7 +686,7 @@ curl <span class="nt">-X</span> POST https://example.com/api/v1/certificate.get 
   </span><span class="nl">"server_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<h3 id="certificate-get-parameters">Parameters</h3>
+<h3 id="certificate-list-parameters">Parameters</h3>
 
 <table><thead>
 <tr>
@@ -676,13 +700,13 @@ curl <span class="nt">-X</span> POST https://example.com/api/v1/certificate.get 
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schemacertificate.get">certificate.get</a></td>
+<td><a href="#schemacertificate.list">certificate.list</a></td>
 <td>true</td>
 <td>none</td>
 </tr>
 </tbody></table>
 
-<h3 id="certificate-get-responses">Responses</h3>
+<h3 id="certificate-list-responses">Responses</h3>
 
 <table><thead>
 <tr>
@@ -1093,8 +1117,8 @@ curl <span class="nt">-X</span> POST https://example.com/api/v1/image.delete <sp
 To perform this operation, you must be authenticated by means of one of the following methods:
 JsonWebToken
 </aside>
-<h2 id='image-get'>image get</h2>
-<p><a id="opIdimage get"></a></p>
+<h2 id='image-list'>image list</h2>
+<p><a id="opIdimage list"></a></p>
 
 <blockquote>
 <p>Code samples</p>
@@ -1107,7 +1131,7 @@ JsonWebToken
   <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Bearer {access-token}'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://example.com/api/v1/image.get'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://example.com/api/v1/image.list'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -1119,17 +1143,17 @@ JsonWebToken
   <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Bearer {access-token}'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://example.com/api/v1/image.get'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://example.com/api/v1/image.list'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> POST https://example.com/api/v1/image.get <span class="se">\</span>
+curl <span class="nt">-X</span> POST https://example.com/api/v1/image.list <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/vnd.api+json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Authorization: Bearer {access-token}'</span>
 
 </code></pre></div>
-<p><code>POST /v1/image.get</code></p>
+<p><code>POST /v1/image.list</code></p>
 
 <p>Displays a list of images on the server</p>
 
@@ -1141,7 +1165,7 @@ curl <span class="nt">-X</span> POST https://example.com/api/v1/image.get <span 
   </span><span class="nl">"server_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<h3 id="image-get-parameters">Parameters</h3>
+<h3 id="image-list-parameters">Parameters</h3>
 
 <table><thead>
 <tr>
@@ -1155,13 +1179,97 @@ curl <span class="nt">-X</span> POST https://example.com/api/v1/image.get <span 
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schemaimage.get">image.get</a></td>
+<td><a href="#schemaimage.list">image.list</a></td>
 <td>true</td>
 <td>none</td>
 </tr>
 </tbody></table>
 
-<h3 id="image-get-responses">Responses</h3>
+<h3 id="image-list-responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+JsonWebToken
+</aside>
+<h2 id='image-serverlist'>image serverlist</h2>
+<p><a id="opIdimage serverlist"></a></p>
+
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/vnd.api+json'</span><span class="p">,</span>
+  <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Bearer {access-token}'</span>
+<span class="p">}</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://example.com/api/v1/image.serverList'</span><span class="p">,</span>
+  <span class="ss">params: </span><span class="p">{</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+
+<span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/vnd.api+json'</span><span class="p">,</span>
+  <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Bearer {access-token}'</span>
+<span class="p">}</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://example.com/api/v1/image.serverList'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
+curl <span class="nt">-X</span> POST https://example.com/api/v1/image.serverList <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/vnd.api+json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Authorization: Bearer {access-token}'</span>
+
+</code></pre></div>
+<p><code>POST /v1/image.serverList</code></p>
+
+<p>Displays a list of images on the server</p>
+
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lxd"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<h3 id="image-serverlist-parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>body</td>
+<td><a href="#schemaimage.serverlist">image.serverList</a></td>
+<td>true</td>
+<td>none</td>
+</tr>
+</tbody></table>
+
+<h3 id="image-serverlist-responses">Responses</h3>
 
 <table><thead>
 <tr>
@@ -1264,6 +1372,91 @@ curl <span class="nt">-X</span> POST https://example.com/api/v1/instance.action 
 To perform this operation, you must be authenticated by means of one of the following methods:
 JsonWebToken
 </aside>
+<h2 id='instance-add'>instance add</h2>
+<p><a id="opIdinstance add"></a></p>
+
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/vnd.api+json'</span><span class="p">,</span>
+  <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Bearer {access-token}'</span>
+<span class="p">}</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://example.com/api/v1/instance.add'</span><span class="p">,</span>
+  <span class="ss">params: </span><span class="p">{</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+
+<span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/vnd.api+json'</span><span class="p">,</span>
+  <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Bearer {access-token}'</span>
+<span class="p">}</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://example.com/api/v1/instance.add'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
+curl <span class="nt">-X</span> POST https://example.com/api/v1/instance.add <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/vnd.api+json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Authorization: Bearer {access-token}'</span>
+
+</code></pre></div>
+<p><code>POST /v1/instance.add</code></p>
+
+<p>Will perform an action with the instance, for example stop-force</p>
+
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"instance_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"instance_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<h3 id="instance-add-parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>body</td>
+<td><a href="#schemainstance.add">instance.add</a></td>
+<td>true</td>
+<td>none</td>
+</tr>
+</tbody></table>
+
+<h3 id="instance-add-responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+JsonWebToken
+</aside>
 <h2 id='instance-get'>instance get</h2>
 <p><a id="opIdinstance get"></a></p>
 
@@ -1308,7 +1501,7 @@ curl <span class="nt">-X</span> POST https://example.com/api/v1/instance.get <sp
 <p>Body parameter</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
-  </span><span class="nl">"instance_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"instance_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"server_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
@@ -1349,10 +1542,8 @@ curl <span class="nt">-X</span> POST https://example.com/api/v1/instance.get <sp
 To perform this operation, you must be authenticated by means of one of the following methods:
 JsonWebToken
 </aside>
-
-<h1 id="ui-vmm-json-api-pool">Pool</h1>
-<h2 id='pool-get'>pool get</h2>
-<p><a id="opIdpool get"></a></p>
+<h2 id='instance-list'>instance list</h2>
+<p><a id="opIdinstance list"></a></p>
 
 <blockquote>
 <p>Code samples</p>
@@ -1365,7 +1556,7 @@ JsonWebToken
   <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Bearer {access-token}'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://example.com/api/v1/pool.get'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://example.com/api/v1/instance.list'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -1377,29 +1568,30 @@ JsonWebToken
   <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Bearer {access-token}'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://example.com/api/v1/pool.get'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://example.com/api/v1/instance.list'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> POST https://example.com/api/v1/pool.get <span class="se">\</span>
+curl <span class="nt">-X</span> POST https://example.com/api/v1/instance.list <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/vnd.api+json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Authorization: Bearer {access-token}'</span>
 
 </code></pre></div>
-<p><code>POST /v1/pool.get</code></p>
+<p><code>POST /v1/instance.list</code></p>
 
-<p>Displays a list of pools on the server</p>
+<p>will display information about the instance(s) from the server available to the user</p>
 
 <blockquote>
 <p>Body parameter</p>
 </blockquote>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"instance_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"server_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<h3 id="pool-get-parameters">Parameters</h3>
+<h3 id="instance-list-parameters">Parameters</h3>
 
 <table><thead>
 <tr>
@@ -1413,13 +1605,99 @@ curl <span class="nt">-X</span> POST https://example.com/api/v1/pool.get <span c
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schemapool.get">pool.get</a></td>
+<td><a href="#schemainstance.list">instance.list</a></td>
 <td>true</td>
 <td>none</td>
 </tr>
 </tbody></table>
 
-<h3 id="pool-get-responses">Responses</h3>
+<h3 id="instance-list-responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+JsonWebToken
+</aside>
+
+<h1 id="ui-vmm-json-api-pool">Pool</h1>
+<h2 id='pool-list'>pool list</h2>
+<p><a id="opIdpool list"></a></p>
+
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/vnd.api+json'</span><span class="p">,</span>
+  <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Bearer {access-token}'</span>
+<span class="p">}</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://example.com/api/v1/pool.list'</span><span class="p">,</span>
+  <span class="ss">params: </span><span class="p">{</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+
+<span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/vnd.api+json'</span><span class="p">,</span>
+  <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Bearer {access-token}'</span>
+<span class="p">}</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://example.com/api/v1/pool.list'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
+curl <span class="nt">-X</span> POST https://example.com/api/v1/pool.list <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/vnd.api+json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Authorization: Bearer {access-token}'</span>
+
+</code></pre></div>
+<p><code>POST /v1/pool.list</code></p>
+
+<p>Displays a list of pools on the server</p>
+
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<h3 id="pool-list-parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>body</td>
+<td><a href="#schemapool.list">pool.list</a></td>
+<td>true</td>
+<td>none</td>
+</tr>
+</tbody></table>
+
+<h3 id="pool-list-responses">Responses</h3>
 
 <table><thead>
 <tr>
@@ -1522,8 +1800,8 @@ curl <span class="nt">-X</span> POST https://example.com/api/v1/profile.delete <
 To perform this operation, you must be authenticated by means of one of the following methods:
 JsonWebToken
 </aside>
-<h2 id='profile-get'>profile get</h2>
-<p><a id="opIdprofile get"></a></p>
+<h2 id='profile-list'>profile list</h2>
+<p><a id="opIdprofile list"></a></p>
 
 <blockquote>
 <p>Code samples</p>
@@ -1536,7 +1814,7 @@ JsonWebToken
   <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Bearer {access-token}'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://example.com/api/v1/profile.get'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://example.com/api/v1/profile.list'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -1548,17 +1826,17 @@ JsonWebToken
   <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Bearer {access-token}'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://example.com/api/v1/profile.get'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://example.com/api/v1/profile.list'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> POST https://example.com/api/v1/profile.get <span class="se">\</span>
+curl <span class="nt">-X</span> POST https://example.com/api/v1/profile.list <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/vnd.api+json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Authorization: Bearer {access-token}'</span>
 
 </code></pre></div>
-<p><code>POST /v1/profile.get</code></p>
+<p><code>POST /v1/profile.list</code></p>
 
 <p>Displays of profiles on the server</p>
 
@@ -1570,7 +1848,7 @@ curl <span class="nt">-X</span> POST https://example.com/api/v1/profile.get <spa
   </span><span class="nl">"server_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<h3 id="profile-get-parameters">Parameters</h3>
+<h3 id="profile-list-parameters">Parameters</h3>
 
 <table><thead>
 <tr>
@@ -1584,13 +1862,13 @@ curl <span class="nt">-X</span> POST https://example.com/api/v1/profile.get <spa
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schemaprofile.get">profile.get</a></td>
+<td><a href="#schemaprofile.list">profile.list</a></td>
 <td>true</td>
 <td>none</td>
 </tr>
 </tbody></table>
 
-<h3 id="profile-get-responses">Responses</h3>
+<h3 id="profile-list-responses">Responses</h3>
 
 <table><thead>
 <tr>
@@ -1851,6 +2129,90 @@ curl <span class="nt">-X</span> POST https://example.com/api/v1/server.get <span
 </tbody></table>
 
 <h3 id="server-get-responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+JsonWebToken
+</aside>
+<h2 id='server-list'>server list</h2>
+<p><a id="opIdserver list"></a></p>
+
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/vnd.api+json'</span><span class="p">,</span>
+  <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Bearer {access-token}'</span>
+<span class="p">}</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://example.com/api/v1/server.list'</span><span class="p">,</span>
+  <span class="ss">params: </span><span class="p">{</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+
+<span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/vnd.api+json'</span><span class="p">,</span>
+  <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Bearer {access-token}'</span>
+<span class="p">}</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://example.com/api/v1/server.list'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
+curl <span class="nt">-X</span> POST https://example.com/api/v1/server.list <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/vnd.api+json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Authorization: Bearer {access-token}'</span>
+
+</code></pre></div>
+<p><code>POST /v1/server.list</code></p>
+
+<p>Will display information about the server(s) available to the user</p>
+
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<h3 id="server-list-parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>body</td>
+<td><a href="#schemaserver.list">server.list</a></td>
+<td>true</td>
+<td>none</td>
+</tr>
+</tbody></table>
+
+<h3 id="server-list-responses">Responses</h3>
 
 <table><thead>
 <tr>
@@ -3594,8 +3956,8 @@ This operation does not require authentication
 </aside>
 
 <h1 id="ui-vmm-json-api-volume">Volume</h1>
-<h2 id='volume-get'>volume get</h2>
-<p><a id="opIdvolume get"></a></p>
+<h2 id='volume-list'>volume list</h2>
+<p><a id="opIdvolume list"></a></p>
 
 <blockquote>
 <p>Code samples</p>
@@ -3608,7 +3970,7 @@ This operation does not require authentication
   <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Bearer {access-token}'</span>
 <span class="p">}</span>
 
-<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://example.com/api/v1/volume.get'</span><span class="p">,</span>
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://example.com/api/v1/volume.list'</span><span class="p">,</span>
   <span class="ss">params: </span><span class="p">{</span>
   <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
 
@@ -3620,17 +3982,17 @@ This operation does not require authentication
   <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Bearer {access-token}'</span>
 <span class="p">}</span>
 
-<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://example.com/api/v1/volume.get'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://example.com/api/v1/volume.list'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
 
 <span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
 
 </code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
-curl <span class="nt">-X</span> POST https://example.com/api/v1/volume.get <span class="se">\</span>
+curl <span class="nt">-X</span> POST https://example.com/api/v1/volume.list <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Content-Type: application/vnd.api+json'</span> <span class="se">\</span>
   <span class="nt">-H</span> <span class="s1">'Authorization: Bearer {access-token}'</span>
 
 </code></pre></div>
-<p><code>POST /v1/volume.get</code></p>
+<p><code>POST /v1/volume.list</code></p>
 
 <p>Displays a list of volumes on the server</p>
 
@@ -3642,7 +4004,7 @@ curl <span class="nt">-X</span> POST https://example.com/api/v1/volume.get <span
   </span><span class="nl">"server_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 </span></code></pre></div>
-<h3 id="volume-get-parameters">Parameters</h3>
+<h3 id="volume-list-parameters">Parameters</h3>
 
 <table><thead>
 <tr>
@@ -3656,13 +4018,13 @@ curl <span class="nt">-X</span> POST https://example.com/api/v1/volume.get <span
 <tr>
 <td>body</td>
 <td>body</td>
-<td><a href="#schemavolume.get">volume.get</a></td>
+<td><a href="#schemavolume.list">volume.list</a></td>
 <td>true</td>
 <td>none</td>
 </tr>
 </tbody></table>
 
-<h3 id="volume-get-responses">Responses</h3>
+<h3 id="volume-list-responses">Responses</h3>
 
 <table><thead>
 <tr>
@@ -3679,14 +4041,14 @@ To perform this operation, you must be authenticated by means of one of the foll
 JsonWebToken
 </aside>
 <h1 id='schemas'>Schemas</h1>
-<h2 id="tocS_certificate.get">certificate.get</h2>
+<h2 id="tocS_certificate.list">certificate.list</h2>
 
 <!-- backwards compatibility -->
 
-<p><a id="schemacertificate.get"></a>
-<a id="schema_certificate.get"></a>
-<a id="tocScertificate.get"></a>
-<a id="tocscertificate.get"></a></p>
+<p><a id="schemacertificate.list"></a>
+<a id="schema_certificate.list"></a>
+<a id="tocScertificate.list"></a>
+<a id="tocscertificate.list"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"server_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
@@ -3874,20 +4236,59 @@ JsonWebToken
 </tr>
 </tbody></table>
 
-<h2 id="tocS_image.get">image.get</h2>
+<h2 id="tocS_image.list">image.list</h2>
 
 <!-- backwards compatibility -->
 
-<p><a id="schemaimage.get"></a>
-<a id="schema_image.get"></a>
-<a id="tocSimage.get"></a>
-<a id="tocsimage.get"></a></p>
+<p><a id="schemaimage.list"></a>
+<a id="schema_image.list"></a>
+<a id="tocSimage.list"></a>
+<a id="tocsimage.list"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lxd"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"server_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
 </span></code></pre></div><h3 id='properties-6'>Properties</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>provider</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>server_id</td>
+<td>integer</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_image.serverList">image.serverList</h2>
+
+<!-- backwards compatibility -->
+
+<p><a id="schemaimage.serverlist"></a>
+<a id="schema_image.serverList"></a>
+<a id="tocSimage.serverlist"></a>
+<a id="tocsimage.serverlist"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lxd"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='properties-7'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -3927,7 +4328,54 @@ JsonWebToken
   </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-7'>Properties</h3>
+</span></code></pre></div><h3 id='properties-8'>Properties</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>instance_id</td>
+<td>integer</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>instance_status</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>provider</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_instance.add">instance.add</h2>
+
+<!-- backwards compatibility -->
+
+<p><a id="schemainstance.add"></a>
+<a id="schema_instance.add"></a>
+<a id="tocSinstance.add"></a>
+<a id="tocsinstance.add"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"instance_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"instance_status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='properties-9'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -3969,12 +4417,59 @@ JsonWebToken
 <a id="tocSinstance.get"></a>
 <a id="tocsinstance.get"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"instance_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='properties-10'>Properties</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>instance_name</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>provider</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>server_id</td>
+<td>integer</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_instance.list">instance.list</h2>
+
+<!-- backwards compatibility -->
+
+<p><a id="schemainstance.list"></a>
+<a id="schema_instance.list"></a>
+<a id="tocSinstance.list"></a>
+<a id="tocsinstance.list"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"instance_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
   </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"server_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-8'>Properties</h3>
+</span></code></pre></div><h3 id='properties-11'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -4007,20 +4502,20 @@ JsonWebToken
 </tr>
 </tbody></table>
 
-<h2 id="tocS_pool.get">pool.get</h2>
+<h2 id="tocS_pool.list">pool.list</h2>
 
 <!-- backwards compatibility -->
 
-<p><a id="schemapool.get"></a>
-<a id="schema_pool.get"></a>
-<a id="tocSpool.get"></a>
-<a id="tocspool.get"></a></p>
+<p><a id="schemapool.list"></a>
+<a id="schema_pool.list"></a>
+<a id="tocSpool.list"></a>
+<a id="tocspool.list"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"server_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-9'>Properties</h3>
+</span></code></pre></div><h3 id='properties-12'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -4060,7 +4555,7 @@ JsonWebToken
   </span><span class="nl">"server_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-10'>Properties</h3>
+</span></code></pre></div><h3 id='properties-13'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -4093,20 +4588,20 @@ JsonWebToken
 </tr>
 </tbody></table>
 
-<h2 id="tocS_profile.get">profile.get</h2>
+<h2 id="tocS_profile.list">profile.list</h2>
 
 <!-- backwards compatibility -->
 
-<p><a id="schemaprofile.get"></a>
-<a id="schema_profile.get"></a>
-<a id="tocSprofile.get"></a>
-<a id="tocsprofile.get"></a></p>
+<p><a id="schemaprofile.list"></a>
+<a id="schema_profile.list"></a>
+<a id="tocSprofile.list"></a>
+<a id="tocsprofile.list"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"server_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-11'>Properties</h3>
+</span></code></pre></div><h3 id='properties-14'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -4148,7 +4643,7 @@ JsonWebToken
   </span><span class="nl">"server_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-12'>Properties</h3>
+</span></code></pre></div><h3 id='properties-15'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -4211,7 +4706,7 @@ JsonWebToken
   </span><span class="nl">"server_protocol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lxd"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-13'>Properties</h3>
+</span></code></pre></div><h3 id='properties-16'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -4271,7 +4766,46 @@ JsonWebToken
   </span><span class="nl">"server_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-14'>Properties</h3>
+</span></code></pre></div><h3 id='properties-17'>Properties</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>provider</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>server_id</td>
+<td>integer</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody></table>
+
+<h2 id="tocS_server.list">server.list</h2>
+
+<!-- backwards compatibility -->
+
+<p><a id="schemaserver.list"></a>
+<a id="schema_server.list"></a>
+<a id="tocSserver.list"></a>
+<a id="tocsserver.list"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"server_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='properties-18'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -4313,7 +4847,7 @@ JsonWebToken
   </span><span class="nl">"server_protocol"</span><span class="p">:</span><span class="w"> </span><span class="s2">"lxd"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-15'>Properties</h3>
+</span></code></pre></div><h3 id='properties-19'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -4377,7 +4911,7 @@ JsonWebToken
   </span><span class="nl">"product_variant"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-16'>Properties</h3>
+</span></code></pre></div><h3 id='properties-20'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -4447,7 +4981,7 @@ JsonWebToken
   </span><span class="p">}</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-17'>Properties</h3>
+</span></code></pre></div><h3 id='properties-21'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -4500,7 +5034,7 @@ JsonWebToken
   </span><span class="nl">"key_public"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-18'>Properties</h3>
+</span></code></pre></div><h3 id='properties-22'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -4538,7 +5072,7 @@ JsonWebToken
   </span><span class="nl">"key_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-19'>Properties</h3>
+</span></code></pre></div><h3 id='properties-23'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -4570,7 +5104,7 @@ JsonWebToken
   </span><span class="nl">"token_revoke_all"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-20'>Properties</h3>
+</span></code></pre></div><h3 id='properties-24'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -4608,7 +5142,7 @@ JsonWebToken
   </span><span class="nl">"token_name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-21'>Properties</h3>
+</span></code></pre></div><h3 id='properties-25'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -4639,7 +5173,7 @@ JsonWebToken
   </span><span class="nl">"user_login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-22'>Properties</h3>
+</span></code></pre></div><h3 id='properties-26'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -4670,7 +5204,7 @@ JsonWebToken
   </span><span class="nl">"user_login"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-23'>Properties</h3>
+</span></code></pre></div><h3 id='properties-27'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -4703,7 +5237,7 @@ JsonWebToken
   </span><span class="nl">"user_register"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-24'>Properties</h3>
+</span></code></pre></div><h3 id='properties-28'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -4749,7 +5283,7 @@ JsonWebToken
   </span><span class="nl">"user_password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-25'>Properties</h3>
+</span></code></pre></div><h3 id='properties-29'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -4788,7 +5322,7 @@ JsonWebToken
   </span><span class="nl">"user_passwordRepeat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-26'>Properties</h3>
+</span></code></pre></div><h3 id='properties-30'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -4827,7 +5361,7 @@ JsonWebToken
   </span><span class="nl">"user_password_locked"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-27'>Properties</h3>
+</span></code></pre></div><h3 id='properties-31'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -4868,7 +5402,7 @@ JsonWebToken
   </span><span class="nl">"user_passwordRepeat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-28'>Properties</h3>
+</span></code></pre></div><h3 id='properties-32'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -4924,7 +5458,7 @@ JsonWebToken
   </span><span class="nl">"user_passwordRepeat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-29'>Properties</h3>
+</span></code></pre></div><h3 id='properties-33'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -4971,20 +5505,20 @@ JsonWebToken
 </tr>
 </tbody></table>
 
-<h2 id="tocS_volume.get">volume.get</h2>
+<h2 id="tocS_volume.list">volume.list</h2>
 
 <!-- backwards compatibility -->
 
-<p><a id="schemavolume.get"></a>
-<a id="schema_volume.get"></a>
-<a id="tocSvolume.get"></a>
-<a id="tocsvolume.get"></a></p>
+<p><a id="schemavolume.list"></a>
+<a id="schema_volume.list"></a>
+<a id="tocSvolume.list"></a>
+<a id="tocsvolume.list"></a></p>
 <div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
   </span><span class="nl">"provider"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
   </span><span class="nl">"server_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-30'>Properties</h3>
+</span></code></pre></div><h3 id='properties-34'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>

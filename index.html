@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title>ui-vmm JSON:API vHEAD-d49af90</title>
+    <title>ui-vmm JSON:API v0.1.1</title>
 
     <style media="screen">
       .highlight table td { padding: 5px; }
@@ -282,8 +282,8 @@
   color: #859900;
 }
     </style>
-    <link href="stylesheets/screen-266ff2e9.css" rel="stylesheet" media="screen" />
-    <link href="stylesheets/print-bcf4acca.css" rel="stylesheet" media="print" />
+    <link href="stylesheets/screen-23b39dfb.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-1c44b2e3.css" rel="stylesheet" media="print" />
       <script src="javascripts/all_nosearch-18c3ed8e.js"></script>
 
   </head>
@@ -304,7 +304,7 @@
         </div>
       <ul id="toc" class="toc-list-h1">
           <li>
-            <a href="#ui-vmm-json-api" class="toc-h1 toc-link" data-title="ui-vmm JSON:API vHEAD-d49af90">ui-vmm JSON:API vHEAD-d49af90</a>
+            <a href="#ui-vmm-json-api" class="toc-h1 toc-link" data-title="ui-vmm JSON:API v0.1.1">ui-vmm JSON:API v0.1.1</a>
           </li>
           <li>
             <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
@@ -473,6 +473,9 @@
                     <a href="#user-credentialmake" class="toc-h2 toc-link" data-title="user credentialmake">user credentialmake</a>
                   </li>
                   <li>
+                    <a href="#user-emailchange" class="toc-h2 toc-link" data-title="user emailchange">user emailchange</a>
+                  </li>
+                  <li>
                     <a href="#user-get" class="toc-h2 toc-link" data-title="user get">user get</a>
                   </li>
                   <li>
@@ -591,6 +594,9 @@
                     <a href="#tocS_user.credentialMake" class="toc-h2 toc-link" data-title="user.credentialMake">user.credentialMake</a>
                   </li>
                   <li>
+                    <a href="#tocS_user.emailChange" class="toc-h2 toc-link" data-title="user.emailChange">user.emailChange</a>
+                  </li>
+                  <li>
                     <a href="#tocS_user.login" class="toc-h2 toc-link" data-title="user.login">user.login</a>
                   </li>
                   <li>
@@ -619,7 +625,7 @@
       <div class="content">
         <!-- Generator: Widdershins v3.6.6 -->
 
-<h1 id="ui-vmm-json-api">ui-vmm JSON:API vHEAD-d49af90</h1>
+<h1 id="ui-vmm-json-api">ui-vmm JSON:API v0.1.1</h1>
 
 <blockquote>
 <p>Scroll down for code samples, example requests and responses. Select a language for code samples from the tabs above or the mobile navigation menu.</p>
@@ -3419,6 +3425,90 @@ curl <span class="nt">-X</span> POST https://example.com/api/v1/user.credentialM
 <aside class="success">
 This operation does not require authentication
 </aside>
+<h2 id='user-emailchange'>user emailchange</h2>
+<p><a id="opIduser emailchange"></a></p>
+
+<blockquote>
+<p>Code samples</p>
+</blockquote>
+<div class="highlight"><pre class="highlight ruby tab-ruby"><code><span class="nb">require</span> <span class="s1">'rest-client'</span>
+<span class="nb">require</span> <span class="s1">'json'</span>
+
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">'Content-Type'</span> <span class="o">=&gt;</span> <span class="s1">'application/vnd.api+json'</span><span class="p">,</span>
+  <span class="s1">'Authorization'</span> <span class="o">=&gt;</span> <span class="s1">'Bearer {access-token}'</span>
+<span class="p">}</span>
+
+<span class="n">result</span> <span class="o">=</span> <span class="no">RestClient</span><span class="p">.</span><span class="nf">post</span> <span class="s1">'https://example.com/api/v1/user.emailChange'</span><span class="p">,</span>
+  <span class="ss">params: </span><span class="p">{</span>
+  <span class="p">},</span> <span class="ss">headers: </span><span class="n">headers</span>
+
+<span class="nb">p</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight python tab-python"><code><span class="kn">import</span> <span class="nn">requests</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s">'Content-Type'</span><span class="p">:</span> <span class="s">'application/vnd.api+json'</span><span class="p">,</span>
+  <span class="s">'Authorization'</span><span class="p">:</span> <span class="s">'Bearer {access-token}'</span>
+<span class="p">}</span>
+
+<span class="n">r</span> <span class="o">=</span> <span class="n">requests</span><span class="p">.</span><span class="n">post</span><span class="p">(</span><span class="s">'https://example.com/api/v1/user.emailChange'</span><span class="p">,</span> <span class="n">headers</span> <span class="o">=</span> <span class="n">headers</span><span class="p">)</span>
+
+<span class="k">print</span><span class="p">(</span><span class="n">r</span><span class="p">.</span><span class="n">json</span><span class="p">())</span>
+
+</code></pre></div><div class="highlight"><pre class="highlight shell tab-shell"><code><span class="c"># You can also use wget</span>
+curl <span class="nt">-X</span> POST https://example.com/api/v1/user.emailChange <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Content-Type: application/vnd.api+json'</span> <span class="se">\</span>
+  <span class="nt">-H</span> <span class="s1">'Authorization: Bearer {access-token}'</span>
+
+</code></pre></div>
+<p><code>POST /v1/user.emailChange</code></p>
+
+<p>Сhanging a user mailbox</p>
+
+<blockquote>
+<p>Body parameter</p>
+</blockquote>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"user_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"user_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre></div>
+<h3 id="user-emailchange-parameters">Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Name</th>
+<th>In</th>
+<th>Type</th>
+<th>Required</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>body</td>
+<td>body</td>
+<td><a href="#schemauser.emailchange">user.emailChange</a></td>
+<td>true</td>
+<td>none</td>
+</tr>
+</tbody></table>
+
+<h3 id="user-emailchange-responses">Responses</h3>
+
+<table><thead>
+<tr>
+<th>Status</th>
+<th>Meaning</th>
+<th>Description</th>
+<th>Schema</th>
+</tr>
+</thead><tbody>
+</tbody></table>
+
+<aside class="warning">
+To perform this operation, you must be authenticated by means of one of the following methods:
+JsonWebToken
+</aside>
 <h2 id='user-get'>user get</h2>
 <p><a id="opIduser get"></a></p>
 
@@ -5270,6 +5360,45 @@ JsonWebToken
 </tr>
 </tbody></table>
 
+<h2 id="tocS_user.emailChange">user.emailChange</h2>
+
+<!-- backwards compatibility -->
+
+<p><a id="schemauser.emailchange"></a>
+<a id="schema_user.emailChange"></a>
+<a id="tocSuser.emailchange"></a>
+<a id="tocsuser.emailchange"></a></p>
+<div class="highlight"><pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"user_code"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"user_email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+
+</span></code></pre></div><h3 id='properties-29'>Properties</h3>
+<table><thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Required</th>
+<th>Restrictions</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>user_code</td>
+<td>string</td>
+<td>false</td>
+<td>none</td>
+<td>none</td>
+</tr>
+<tr>
+<td>user_email</td>
+<td>string</td>
+<td>true</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody></table>
+
 <h2 id="tocS_user.login">user.login</h2>
 
 <!-- backwards compatibility -->
@@ -5283,7 +5412,7 @@ JsonWebToken
   </span><span class="nl">"user_password"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-29'>Properties</h3>
+</span></code></pre></div><h3 id='properties-30'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -5322,7 +5451,7 @@ JsonWebToken
   </span><span class="nl">"user_passwordRepeat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-30'>Properties</h3>
+</span></code></pre></div><h3 id='properties-31'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -5361,7 +5490,7 @@ JsonWebToken
   </span><span class="nl">"user_password_locked"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-31'>Properties</h3>
+</span></code></pre></div><h3 id='properties-32'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -5402,7 +5531,7 @@ JsonWebToken
   </span><span class="nl">"user_passwordRepeat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-32'>Properties</h3>
+</span></code></pre></div><h3 id='properties-33'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -5458,7 +5587,7 @@ JsonWebToken
   </span><span class="nl">"user_passwordRepeat"</span><span class="p">:</span><span class="w"> </span><span class="s2">"string"</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-33'>Properties</h3>
+</span></code></pre></div><h3 id='properties-34'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
@@ -5518,7 +5647,7 @@ JsonWebToken
   </span><span class="nl">"server_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="w">
 </span><span class="p">}</span><span class="w">
 
-</span></code></pre></div><h3 id='properties-34'>Properties</h3>
+</span></code></pre></div><h3 id='properties-35'>Properties</h3>
 <table><thead>
 <tr>
 <th>Name</th>
